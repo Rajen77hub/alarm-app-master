@@ -1,0 +1,38 @@
+name: weather_alarm_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.4
+  google_fonts: ^2.3.1
+  flutter_local_notifications: ^9.4.0
+  sqflite: ^2.0.2
+  dotted_border: ^2.0.0+2
+  flash: ^2.0.3+2
+  http: ^0.13.4
+  geolocator: ^8.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: fonts/Avenir-Black.otf
+        - asset: fonts/Avenir-Book.otf
+          weight: 100
+        - asset: fonts/Avenir-Roman.otf
+          style: italic
+
+  uses-material-design: true
+
