@@ -12,7 +12,7 @@ import '../constants/text_style.dart';
 import 'alarmscreen.dart';
 import 'homepage.dart';
 import 'start_screen.dart';
-//import 'package:flutter_tts/flutter_tts.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 
 late String DateText = 'Set date';
@@ -29,7 +29,7 @@ class AddAlarmScreen extends StatefulWidget {
 }
 
 class _AddAlarmScreenState extends State<AddAlarmScreen> {
-
+  final FlutterTts flutterTts = FlutterTts(); //ttr
   AlarmHelper _alarmHelper = AlarmHelper();
 
   @override
@@ -113,6 +113,15 @@ class _AddAlarmScreenState extends State<AddAlarmScreen> {
   @override
   Widget build(BuildContext context) {
 
+    TextEditingController textEditingController = TextEditingController();
+    Future _speak(String text) async {
+      print(await flutterTts.getLanguages);
+      await flutterTts.setLanguage("en-US");
+      await flutterTts.setPitch(0.5);
+      print(await flutterTts.getVoices);
+      await flutterTts.speak(text);
+    }
+    
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () async{
         DateTime finalDateTime =  DateTime(date.year, date.month, date.day, time.hour, time.minute);
